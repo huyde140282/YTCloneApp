@@ -12,3 +12,12 @@ export type VideoProps = {
 export type VideoListProps = {
     videos: Video[];
 }
+export type User = {
+    email: string;
+    password: string;
+}
+export type NewUser = {
+    email: string;
+    username: string;
+    password: string;
+}
