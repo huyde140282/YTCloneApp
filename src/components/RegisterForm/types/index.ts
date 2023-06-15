@@ -3,3 +3,6 @@ export type RegisterFormData = {
     email: string;
     password: string;
 }
+export type RegisterFormProps = {
+    registerUser: (data: RegisterFormData) => void;
+}
