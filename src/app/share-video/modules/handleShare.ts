@@ -2,7 +2,6 @@ import { useState } from "react";
 import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { firestore } from "@/firebase/config";
 import { showErrorToast, showSuccessfullToast } from "@/shared/handler";
-import { randomId } from "@/shared/initalData";
 import { User, VideoSharedType } from "@/shared/types";
 import { useRouter } from "next/navigation";
 
@@ -29,7 +28,7 @@ export function useHandleShare(user?: User) {
                 return;
             }
             console.log({ ...data, userId: user.id, dislikes: 0, likes: 0 })
-            await setDoc(doc(firestore, "videos", randomId), {
+            await setDoc(doc(firestore, "videos", "2190392013"), {
                 ...data,
                 userId: user.id,
                 dislikes: 0, likes: 0
