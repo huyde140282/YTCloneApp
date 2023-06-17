@@ -1,13 +1,16 @@
 "use client";
+import { logout } from "@/redux/features/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { RiMovie2Fill } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { useHandleLogout } from "./modules/handeLogout";
 
 const Navbar: React.FC = () => {
-  const { isLoggedIn, user } = useAppSelector((state) => state.auth);
-  // if (!isLoggedIn) return null;
-
+  const { user } = useAppSelector((state) => state.auth);
+  const { handleLogout } = useHandleLogout();
   return (
     <nav className="container mx-auto flex md:flex-row flex-col md:justify-between md:items-center pt-5 pb-7 px-6 border-b-4 border-[#007aff]">
       {/* Logo and Title */}
@@ -24,7 +27,10 @@ const Navbar: React.FC = () => {
             Share a movie
           </button>
         </Link>
-        <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+        <button
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+          onClick={handleLogout}
+        >
           Logout
         </button>
       </div>

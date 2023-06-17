@@ -1,26 +1,30 @@
 "use client";
 import VideoList from "@/components/VideoList";
 import { useAppSelector } from "@/redux/hooks";
-import { videos } from "@/shared/data";
-import { NextPage } from "next";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useFetchVideos } from "@/hook/useFetchVideos";
 
-const HomePage: NextPage = () => {
-  const router = useRouter();
+export default function Page() {
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+  const router = useRouter();
 
   useEffect(() => {
     if (!isLoggedIn) {
       router.push("/login");
     }
   }, [isLoggedIn, router]);
+
+  const { videos, loading, error } = useFetchVideos();
+  console.log(videos);
   return (
     <main>
-      <h1 className="text-2xl font-bold text-center">List of Shared Videos</h1>
-      <VideoList videos={videos} />
+      <h1 className="text-3xl font-bold text-center text-white mt-5 mb-8">
+        Explore and Discover Engaging Videos!
+      </h1>
+      {isLoggedIn && (
+        <VideoList videos={videos} loading={loading} error={error} />
+      )}
     </main>
   );
-};
-
-export default HomePage;
+}

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { useState } from "react";
+import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { firestore } from "@/firebase/config";
 import { showErrorToast, showSuccessfullToast } from "@/shared/handler";
 import { randomId } from "@/shared/initalData";
@@ -15,7 +15,6 @@ export function useHandleShare(user?: User) {
         setLoading(true);
 
         try {
-            console.log('ahi')
             // Check if video with the same videoURL already exists
             const videosQuery = query(
                 collection(firestore, "videos"),

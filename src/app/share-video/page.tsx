@@ -8,8 +8,8 @@ import Router from "next/router";
 
 const ShareVideoPage: NextPage = () => {
   const { user } = useAppSelector((state) => state.auth);
- 
-  const { handleShare, loading } = useHandleShare(user);
+
+  const { handleShare, loading } = useHandleShare(user || undefined);
   return <ShareVideoForm onShareVideo={handleShare} isLoading={loading} />;
 };
 
