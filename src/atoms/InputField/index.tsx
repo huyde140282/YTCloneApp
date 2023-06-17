@@ -7,7 +7,7 @@ const InputField = (props: InputFieldProps) => {
 
   return (
     <div className="mb-4">
-      <label htmlFor={name} className="block mb-2 font-bold text-gray-700">
+      <label htmlFor={name} className="block mb-2 font-bold text-[#0b3d72]">
         {label}
       </label>
       <Field

@@ -4,4 +4,5 @@ export type LoginFormFormData = {
 }
 export type LoginFormProps = {
     loginUser: (data: LoginFormFormData) => void;
+    isLoading: boolean
 }
