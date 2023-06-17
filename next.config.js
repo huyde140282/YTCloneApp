@@ -3,6 +3,5 @@ const nextConfig = {};
 
 module.exports = {
   reactStrictMode: true,
-  experimental: { appDir: true },
-  pageExtensions: ["page.tsx"],
+  experimental: { appDir: true ,serverActions: true,},
 };
