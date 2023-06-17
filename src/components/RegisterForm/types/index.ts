@@ -5,4 +5,5 @@ export type RegisterFormData = {
 }
 export type RegisterFormProps = {
     registerUser: (data: RegisterFormData) => void;
+    isLoading: boolean
 }
