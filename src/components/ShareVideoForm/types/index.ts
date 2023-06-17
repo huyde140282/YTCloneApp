@@ -1,3 +1,6 @@
+import { VideoSharedType } from "@/shared/types";
+
 export type ShareYouTubeVideoProps = {
-    onShareVideo: (videoUrl: string) => void;
+    onShareVideo: (video: VideoSharedType) => void;
+    isLoading: boolean
 }

@@ -1,14 +1,12 @@
 import * as Yup from "yup";
 import { LoginFormFormData } from "../types";
-export const loginInputFields: Record<string, any>[] = [
+export const loginInputFields: Record<string, string>[] = [
     {
-        loginName: 'email',
         label: 'Email',
         type: 'text',
         name: 'email',
     },
     {
-        loginName: 'password',
         label: 'Password',
         type: 'password',
         name: 'password',
