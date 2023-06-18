@@ -1,7 +1,7 @@
-"use client";
-import { NextPage } from "next";
-import RegisterForm from "@/components/RegisterForm";
-import { useHandleRegister } from "./modules/handleRegister";
+'use client';
+import { NextPage } from 'next';
+import RegisterForm from '@/components/RegisterForm';
+import { useHandleRegister } from './modules/useHandleRegister';
 
 const RegisterPage: NextPage = () => {
   const { handleRegister, loading } = useHandleRegister();

@@ -1,14 +1,14 @@
-import React from "react";
-import { Field, ErrorMessage } from "formik";
-import { InputFieldProps } from "./types";
+import React from 'react';
+import { Field, ErrorMessage } from 'formik';
+import { InputFieldProps } from './types';
 
 const InputField = (props: InputFieldProps) => {
   const { label, name, type, color } = props;
 
   const labelClassName =
-    color === "blue"
-      ? "block mb-2 font-bold text-[#0b3d72]"
-      : "block mb-2 font-bold text-white";
+    color === 'blue'
+      ? 'block mb-2 font-bold text-[#0b3d72]'
+      : 'block mb-2 font-bold text-white';
 
   return (
     <div className="mb-4">

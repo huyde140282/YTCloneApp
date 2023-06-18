@@ -1,13 +1,14 @@
-import { VideoProps } from "@/shared/types";
-import ReactPlayer from "react-player";
-import React, { useEffect, useRef, useState } from "react";
-import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+import { VideoProps } from '@/shared/types';
+import ReactPlayer from 'react-player';
+import React, { useEffect, useRef, useState } from 'react';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 const Video: React.FC<VideoProps> = ({ video }) => {
   const { title, videoUrl, sharedBy, likes, dislikes, description } = video;
   const playerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Resize the player element when the window is resized
     const resizePlayer = () => {
       const playerElement = playerRef.current;
       if (playerElement) {
@@ -16,11 +17,13 @@ const Video: React.FC<VideoProps> = ({ video }) => {
       }
     };
 
-    window.addEventListener("resize", resizePlayer);
+    // Add resize event listener and invoke the resizePlayer function
+    window.addEventListener('resize', resizePlayer);
     resizePlayer();
 
+    // Cleanup: remove the resize event listener
     return () => {
-      window.removeEventListener("resize", resizePlayer);
+      window.removeEventListener('resize', resizePlayer);
     };
   }, []);
 

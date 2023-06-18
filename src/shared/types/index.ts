@@ -1,42 +1,42 @@
 export type VideoFirebase = {
-    title: string;
-    userId: string;
-    videoUrl: string;
-    likes: number;
-    dislikes: number;
-    description: string;
-}
+  title: string;
+  userId: string;
+  videoUrl: string;
+  likes: number;
+  dislikes: number;
+  description: string;
+};
 export type Video = {
-    title: string;
-    sharedBy: string;
-    videoUrl: string;
-    likes: number;
-    dislikes: number;
-    description: string;
-}
+  title: string;
+  sharedBy: string;
+  videoUrl: string;
+  likes: number;
+  dislikes: number;
+  description: string;
+};
 export type VideoProps = {
-    video: Video;
-}
+  video: Video;
+};
 export type VideoListProps = {
-    videos?: Video[];
-    loading: boolean
-}
+  videos?: Video[];
+  loading: boolean;
+};
 export type User = {
-    id: string;
-    email: string;
-    password: string;
-}
+  id: string;
+  email: string;
+  password: string;
+};
 export type LoginFormData = {
-    email: string;
-    password: string;
-}
+  email: string;
+  password: string;
+};
 export type NewUser = {
-    email: string;
-    username: string;
-    password: string;
-}
+  email: string;
+  username: string;
+  password: string;
+};
 export type VideoSharedType = {
-    title: string;
-    description: string;
-    videoUrl: string;
-}
+  title: string;
+  description: string;
+  videoUrl: string;
+};

@@ -1,8 +1,8 @@
-"use client";
-import ShareVideoForm from "@/components/ShareVideoForm";
-import { useAppSelector } from "@/redux/hooks";
-import { NextPage } from "next";
-import { useHandleShare } from "./modules/useHandleShare";
+'use client';
+import ShareVideoForm from '@/components/ShareVideoForm';
+import { useAppSelector } from '@/redux/hooks';
+import { NextPage } from 'next';
+import { useHandleShare } from './modules/useHandleShare';
 
 const ShareVideoPage: NextPage = () => {
   const { user } = useAppSelector((state) => state.auth);

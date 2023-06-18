@@ -10,7 +10,8 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "css:dev": "TAILWIND_MODE=watch postcss ./styles/tailwind.css -o ./styles/globals.css --watch",
-    "css:build": "postcss ./styles/tailwind.css -o ./styles/globals.css"
+    "css:build": "postcss ./styles/tailwind.css -o ./styles/globals.css",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

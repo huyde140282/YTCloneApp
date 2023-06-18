@@ -1,8 +1,8 @@
-"use client";
-import VideoList from "@/components/VideoList";
-import { useAppSelector } from "@/redux/hooks";
-import { useRouter } from "next/navigation";
-import { useFetchVideos } from "@/app/modules/useHandleFetchVideos";
+'use client';
+import VideoList from '@/components/VideoList';
+import { useAppSelector } from '@/redux/hooks';
+import { useRouter } from 'next/navigation';
+import { useFetchVideos } from '@/app/modules/useHandleFetchVideos';
 
 export default function Page() {
   const { isLoggedIn } = useAppSelector((state) => state.auth);

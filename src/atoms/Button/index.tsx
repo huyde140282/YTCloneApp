@@ -1,4 +1,4 @@
-import { ButtonProps } from "./types";
+import { ButtonProps } from './types';
 
 export const Button = (props: ButtonProps) => {
   const { name } = props;

@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import React from "react";
-import { RiMovie2Fill } from "react-icons/ri";
-import { useHandleLogout } from "./modules/handeLogout";
+'use client';
+import Link from 'next/link';
+import React from 'react';
+import { RiMovie2Fill } from 'react-icons/ri';
+import { useHandleLogout } from './modules/handeLogout';
 
 const Navbar: React.FC = () => {
   const { handleLogout, user } = useHandleLogout();

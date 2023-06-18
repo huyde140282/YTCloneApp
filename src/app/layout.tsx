@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar";
-import "../styles/globals.css";
-import "react-toastify/dist/ReactToastify.css";
-import { Providers } from "@/components/Provider";
+import Navbar from '@/components/Navbar';
+import '../styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Providers } from '@/components/Provider';
 
 export default function RootLayout({
   children,

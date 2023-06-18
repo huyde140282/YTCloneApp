@@ -9,13 +9,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-to-bottom': 'linear-gradient(to bottom, transparent, var(--tw-gradient-stops))',
+        'gradient-to-bottom':
+          'linear-gradient(to bottom, transparent, var(--tw-gradient-stops))',
       },
       backgroundColor: {
-        'start': 'var(--background-start)',
-        'end': 'var(--background-end)',
+        start: 'var(--background-start)',
+        end: 'var(--background-end)',
       },
     },
   },
   plugins: [],
-}
+};

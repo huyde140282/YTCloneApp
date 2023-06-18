@@ -1,7 +1,7 @@
 import { RenderHookResult, renderHook } from '@testing-library/react-hooks';
 
-
-export interface CustomRenderHookResult<T> extends RenderHookResult<unknown, T> {
+export interface CustomRenderHookResult<T>
+  extends RenderHookResult<unknown, T> {
   mocks: { moduleName: string; mockImplementation: any }[];
 }
 

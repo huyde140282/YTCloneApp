@@ -1,8 +1,8 @@
-import React from "react";
-import { VideoListProps } from "@/shared/types";
-import VideoComponent from "../Video";
-import LoadingSpinner from "@/atoms/LoadingSpinner";
-import { ToastContainer } from "react-toastify";
+import React from 'react';
+import { VideoListProps } from '@/shared/types';
+import VideoComponent from '../Video';
+import LoadingSpinner from '@/atoms/LoadingSpinner';
+import { ToastContainer } from 'react-toastify';
 
 const VideoList: React.FC<VideoListProps> = (props) => {
   const { videos, loading } = props;
