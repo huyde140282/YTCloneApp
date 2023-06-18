@@ -3,8 +3,9 @@ import { auth } from "@/firebase/config";
 import { login } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { showErrorToast } from "@/shared/handler";
+import { SOMETHING_WENT_WRONG, USER_DOES_NOT_EXIST } from "@/shared/message";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 export default function useHandleLogin() {
@@ -17,6 +18,7 @@ export default function useHandleLogin() {
 
     // Function to handle login
     const handleLogin = async (data: LoginFormFormData) => {
+        console.log(data)
         const { email, password } = data;
         // Set loading to true
         setLoading(true);
@@ -25,7 +27,7 @@ export default function useHandleLogin() {
             const newUser = await signInWithEmailAndPassword(email, password);
             if (!newUser) {
                 // If user does not exist or login credentials are incorrect
-                showErrorToast("User does not exist or username/password is incorrect");
+                showErrorToast(USER_DOES_NOT_EXIST);
                 return;
             }
             const {
@@ -34,7 +36,7 @@ export default function useHandleLogin() {
             dispatch(login({ ...data, id: uid }));
             router.push("/");
         } catch (error) {
-            showErrorToast("Something went wrong");
+            showErrorToast(SOMETHING_WENT_WRONG);
         } finally {
             setTimeout(() => {
                 setLoading(false);

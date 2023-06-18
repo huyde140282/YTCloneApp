@@ -38,6 +38,7 @@ const ShareVideoForm: React.FC<ShareYouTubeVideoProps> = ({
                       name={name}
                       label={label}
                       type={type}
+                      color="white"
                     />
                   ))}
                 </div>

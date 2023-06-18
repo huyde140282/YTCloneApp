@@ -19,7 +19,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
     <div className="fixed inset-0 flex justify-center items-center z-50">
       <ToastContainer />
       <div className="absolute inset-0 bg-gray-300 opacity-50 backdrop-filter backdrop-blur-sm"></div>
-      <div className="bg-gray-300 p-8 rounded-xl shadow-md w-full max-w-md mx-4 md:w-1/3 relative">
+      <div className="bg-gray-300 p-8 rounded-xl shadow-md w-full max-w-md mx-4 md:w-2/3 relative">
         {isLoading ? (
           <LoadingSpinner />
         ) : (
@@ -43,6 +43,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                     name={registerName}
                     label={label}
                     type={type}
+                    color="blue"
                   />
                 ))}
                 <Button name="Register" />

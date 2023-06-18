@@ -6,7 +6,6 @@ export type VideoFirebase = {
     dislikes: number;
     description: string;
 }
-
 export type Video = {
     title: string;
     sharedBy: string;
@@ -21,7 +20,6 @@ export type VideoProps = {
 export type VideoListProps = {
     videos?: Video[];
     loading: boolean
-    error: string | null
 }
 export type User = {
     id: string;

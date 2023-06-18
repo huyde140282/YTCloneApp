@@ -1,7 +1,7 @@
 import { doc, setDoc } from "firebase/firestore";
-import { videos } from "../data";
 import { nanoid } from 'nanoid';
 import { firestore } from "@/firebase/config";
+import { videos } from "./constants";
 
 export const randomId = nanoid(11);
 

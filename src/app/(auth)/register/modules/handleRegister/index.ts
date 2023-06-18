@@ -5,6 +5,7 @@ import { NewUser } from "@/shared/types";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, firestore } from "@/firebase/config";
 import { showErrorToast } from "@/shared/handler";
+import { SOMETHING_WENT_WRONG, USER_ALREADY_EXISTS } from "@/shared/message";
 
 export function useHandleRegister() {
     const router = useRouter();
@@ -18,8 +19,7 @@ export function useHandleRegister() {
         try {
             const newUser = await createUserWithEmailAndPassword(email, password);
             if (!newUser) {
-                console.log('ahihi')
-                showErrorToast("User already exists or an error occurred");
+                showErrorToast(USER_ALREADY_EXISTS);
                 return;
             }
 
@@ -35,8 +35,8 @@ export function useHandleRegister() {
             await setDoc(doc(firestore, "users", newUser.user.uid), userData);
 
             router.push("/login");
-        } catch (error: any) {
-            showErrorToast("Something went wrong");
+        } catch (error) {
+            showErrorToast(SOMETHING_WENT_WRONG);
         } finally {
             setTimeout(() => {
                 setLoading(false);

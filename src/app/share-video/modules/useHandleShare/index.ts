@@ -1,10 +1,11 @@
+import { randomId } from './../../../../shared/initalData/index';
 import { useState } from "react";
 import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
 import { firestore } from "@/firebase/config";
 import { showErrorToast, showSuccessfullToast } from "@/shared/handler";
-import { randomId } from "@/shared/initalData";
 import { User, VideoSharedType } from "@/shared/types";
 import { useRouter } from "next/navigation";
+import { FAILED_TO_SHARE_VIDEO, SUCCESSFULLY_SHARED, VIDEO_ALREADY_EXISTS } from '@/shared/message';
 
 export function useHandleShare(user?: User) {
     const router = useRouter();
@@ -23,8 +24,7 @@ export function useHandleShare(user?: User) {
             const videoDocsSnapshot = await getDocs(videosQuery);
 
             if (!videoDocsSnapshot.empty) {
-                console.log('zo')
-                showErrorToast("Video already exists");
+                showErrorToast(VIDEO_ALREADY_EXISTS);
                 setLoading(false);
                 return;
             }
@@ -34,11 +34,11 @@ export function useHandleShare(user?: User) {
                 userId: user.id,
                 dislikes: 0, likes: 0
             });
-            showSuccessfullToast("Successfully shared");
+            showSuccessfullToast(SUCCESSFULLY_SHARED);
             router.push("/");
         } catch (error) {
             console.log(error);
-            showErrorToast("Failed to share video");
+            showErrorToast(FAILED_TO_SHARE_VIDEO);
         } finally {
             setTimeout(() => {
                 setLoading(false);
