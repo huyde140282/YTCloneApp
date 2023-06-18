@@ -29,7 +29,7 @@ export function useHandleShare(user?: User) {
                 return;
             }
             console.log({ ...data, userId: user.id, dislikes: 0, likes: 0 })
-            await setDoc(doc(firestore, "videos", randomId), {
+            await setDoc(doc(firestore, "videos", "2190392013"), {
                 ...data,
                 userId: user.id,
                 dislikes: 0, likes: 0
