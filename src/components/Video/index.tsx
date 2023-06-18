@@ -23,8 +23,9 @@ const Video: React.FC<VideoProps> = ({ video }) => {
       window.removeEventListener("resize", resizePlayer);
     };
   }, []);
+
   return (
-    <div className="w-full flex flex-row items-center hover:bg-[#4c426e] bg-transparent py-2 p-4 rounded-lg cursor-pointer mb-2">
+    <div className="w-full flex flex-col md:flex-row justify-center items-center hover:bg-[#4c426e] bg-transparent py-2 p-4 rounded-lg cursor-pointer mb-2">
       <div className="w-full md:w-1/2 aspect-w-16 aspect-h-9 mr-4">
         {/* Render the video player */}
         <div
@@ -48,7 +49,7 @@ const Video: React.FC<VideoProps> = ({ video }) => {
           />
         </div>
       </div>
-      <div className="w-full md:w-1/2 video-info">
+      <div className="w-full mt-2 md:mt-0 md:w-1/2 video-info">
         {/* Render the video information on the right */}
         <h2 className="text-lg font-bold text-white">{title}</h2>
         <p className="text-base text-white font-bold">
